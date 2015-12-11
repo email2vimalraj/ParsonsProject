@@ -1,0 +1,214 @@
+//colors
+$color_bright_gray_approx: #364150;
+$color_athens_gray_approx: #eceef1;
+$color_tradewind_approx: #4db3a5;
+$color_fuscous_gray_approx: #555;
+$color_mountain_mist_approx: #999;
+$color_mystic_approx: #dde3ec;
+$color_regent_gray_approx: #8290a3;
+$color_ghost_approx: #c3ccda;
+$color_gallery_approx: #eee;
+$color_raven_approx: #6c7a8d;
+$white: #ffffff;
+$color_white_pointer_approx: #fafaff;
+$color_puerto_rico_approx: #45b6af;
+$color_periwinkle_gray_approx: #c3cedd;
+$color_gothic_approx: #7a8ca5;
+
+.login {
+    background-color: $color_bright_gray_approx !important;
+    .logo {
+        margin: 0 auto;
+        margin-top: 60px;
+        padding: 15px;
+        text-align: center;
+    }
+    .content {
+        background-color: $color_athens_gray_approx;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 7px;
+        width: 400px;
+        margin: 40px auto 10px auto;
+        padding: 30px;
+        padding-top: 10px;
+        overflow: hidden;
+        position: relative;
+        h3 {
+            color: $color_tradewind_approx;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400 !important;
+        }
+        h4 {
+            color: $color_fuscous_gray_approx;
+        }
+        .hint {
+            color: $color_mountain_mist_approx;
+            padding: 0;
+            margin: 15px 0 7px;
+        }
+        .login-form {
+            padding: 0;
+            margin: 0;
+        }
+        .forget-form {
+            padding: 0;
+            margin: 0;
+            display: none;
+            .form-actions {
+                border: 0;
+                margin-bottom: 0;
+                padding-bottom: 20px;
+            }
+        }
+        .form-control {
+            border: none;
+            background-color: $color_mystic_approx;
+            height: 43px;
+            color: $color_regent_gray_approx;
+            border: 1px solid $color_mystic_approx;
+            &:focus {
+                border: 1px solid $color_ghost_approx;
+            }
+            &:active {
+                border: 1px solid $color_ghost_approx;
+            }
+            &:-ms-input-placeholder {
+                color: $color_regent_gray_approx;
+            }
+        }
+        .form-control::-moz-placeholder {
+            color: $color_regent_gray_approx;
+            opacity: 1;
+        }
+        .form-control::-webkit-input-placeholder {
+            color: $color_regent_gray_approx;
+        }
+        .register-form {
+            display: none;
+            .form-actions {
+                border: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+        .form-title {
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+        .form-actions {
+            clear: both;
+            border: 0;
+            border-bottom: 1px solid $color_gallery_approx;
+            padding: 0 30px 25px;
+            margin-left: -30px;
+            margin-right: -30px;
+            .checkbox {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            .btn {
+                margin-top: 1px;
+            }
+            .btn-success {
+                font-weight: 600;
+                padding: 10px 20px !important;
+            }
+            .btn-default {
+                font-weight: 600;
+                padding: 10px 25px !important;
+                color: $color_raven_approx;
+                background-color: $white;
+                border: none;
+                &:hover {
+                    background-color: $color_white_pointer_approx;
+                    color: $color_puerto_rico_approx;
+                }
+            }
+        }
+        .forget-password {
+            font-size: 14px;
+            float: right;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .check {
+            color: $color_regent_gray_approx;
+        }
+        .rememberme {
+            margin-left: 8px;
+            margin-top: 10px;
+        }
+        .create-account {
+            margin: 0 -40px -40px;
+            padding: 15px 0 17px;
+            text-align: center;
+            background-color: $color_raven_approx;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 0 0 7px 7px;
+            a {
+                display: inline-block;
+                margin-top: 5px;
+            }
+            p a {
+                font-weight: 600;
+                font-size: 14px;
+                color: $color_periwinkle_gray_approx;
+            }
+        }
+        select.form-control {
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+    }
+    .copyright {
+        text-align: center;
+        margin: 0 auto 30px 0;
+        padding: 10px;
+        color: $color_gothic_approx;
+        font-size: 13px;
+    }
+}
+.login-options {
+    margin-bottom: 30px;
+    overflow: hidden;
+    h4 {
+        float: left;
+        font-weight: 600;
+        font-size: 15px;
+        color: $color_regent_gray_approx !important;
+    }
+    .social-icons {
+        float: right;
+        padding-top: 3px;
+        li a {
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 15px 15px 15px 15px !important;
+        }
+    }
+}
+@media(max-width: 440px) {
+    .login {
+        .logo {
+            margin-top: 10px;
+        }
+        .content {
+            width: 280px;
+            margin-top: 10px;
+            h3 {
+                font-size: 22px;
+            }
+        }
+        .checkbox {
+            font-size: 13px;
+        }
+    }
+    .forget-password {
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .login-options .social-icons {
+        float: left;
+        padding-top: 3px;
+    }
+}

@@ -34,53 +34,117 @@ export default class RandomProblem extends React.Component {
   render() {
     console.log(this.state.allProblems);
     let allProblems = this.state.allProblems;
+
+    var border1 = {
+        "border": "1px solid #efefff"
+    };
+
+    var border2 = {
+        "border": "1px solid #efefff",
+        "background-color": "#FFA"
+    };
+
+    var boxShadow1 = {
+        "box-shadow": "0px 0px 0px 0px rgba(0, 0, 0, 0)"
+    };
+
     return (
       <div>
-      <div className ="container-fluid">
-          
-            <div className="row">
-                    <div className="col-lg-12">
-                        <h1 className="page-header">
-                            Random Problem <small>Parsons Problem</small>
-                        </h1>
-                        <ol className="breadcrumb">
-                            <li className="active">
-                                <i className="fa fa-dashboard"></i> <Link to ="/dashboard/main">Dashboard</Link>
-                            </li>
-                            <li>
-                            Random Problem
-                            </li>
-                        </ol>
-                        <div className ="row">
-                        {allProblems.map((prob) =>
-                          <div className="col-md-4">
-                          <div className={(() => {
-                                switch (prob._id % 4) {
-                                  default:      return "panel panel-primary";
-                                }
-                              })()} id="problem" key={'problem' + prob._id}>
-                            <div className="panel-heading" style={(() => {
-                                switch (prob._id % 4) {
-                                  case 0:   return { backgroundColor: "#2d2d2d!important", borderColor: "#2d2d2d!important"};
-                                  case 1: return { backgroundColor: "#cc7a6f!important", borderColor: "#cc7a6f!important"};
-                                  case 2:  return { backgroundColor: "#f8f5ec!important", borderColor: "#f8f5ec!important"};
-                                  default:      return { backgroundColor: "#61dafb!important", borderColor: "#61dafb!important"};
-                                }
-                              })()}>{prob.title}</div>
-                              <div className="panel-body">
-                              <p>{prob.description}</p>
-                              <p>{prob._id}</p>
-                              <Link to={'/dashboard/randomproblem/' + prob._id}><button className="btn btn-primary">Try it!</button></Link>
-                              </div>
-                          </div>
-                          </div>
-                        )}
+        <div className="page-head">
+            
+            <div className="container">
+                
+                <div className="page-title">
+                    <h1>Your First Parsons Problem</h1>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div className="page-content">
+            
+            <div className="container">
+
+                <ul className="page-breadcrumb breadcrumb">
+                    <li>
+                        <Link to="#">Home</Link><i className="fa fa-circle"></i>
+                    </li>
+                    <li className="active">
+                         Random Problems
+                    </li>
+                </ul>
+                
+                <div className="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 className="modal-title">Modal title</h4>
+                            </div>
+                            <div className="modal-body">
+                                 Widget settings form goes here
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn blue">Save changes</button>
+                                <button type="button" className="btn default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-          </div>
-            
+                
+                <div className="portlet light">
+                    <div className="portlet-body">
+                        <div className="row note note-success note-bordered">
+                            <div className="col-md-12">
+                                <p>
+                                    <b>Your task</b>: Construct a <i>Python</i> program that prints strings "Hello", "Parsons", and "Problems" on their own lines. You can get feedback on your current solution with the feedback button. You should construct your program by dragging and dropping the lines to the solution area on the right.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="row" id="sortable_portlets">
+                            <div className="col-md-5 column sortable" style={border1}>
+                                <div className="portlet portlet-sortable" style={boxShadow1}></div>
+
+                                <div className="portlet portlet-sortable box blue-hoki">
+                                    <div className="portlet-title">
+                                        <div className="caption">
+                                            print 'Hello'
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="portlet portlet-sortable box blue-hoki">
+                                    <div className="portlet-title">
+                                        <div className="caption">
+                                            print 'Problems'
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="portlet portlet-sortable box blue-hoki">
+                                    <div className="portlet-title">
+                                        <div className="caption">
+                                            print 'Parsons'
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-md-1"></div>
+
+                            <div className="col-md-5 column sortable" style={border2}>
+                                <div className="portlet portlet-sortable" style={boxShadow1}></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-        </div>
+      </div>
     );
   }
 }

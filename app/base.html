@@ -9,7 +9,7 @@
     LINK
 
 </head>
-<body>
+<body class="page-md login">
 
 <div class="app">CONTENT</div>
 
@@ -22,12 +22,57 @@
     ga('create', 'UA-XXXXX-X', 'auto');
     ga('send', 'pageview');
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script>
-        var socket = io();
-</script>
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="./assets/global/plugins/respond.min.js"></script>
+    <script src="./assets/global/plugins/excanvas.min.js"></script> 
+    <![endif]-->
+    <script src="/assets/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/assets/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.cokie.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="/assets/jquery.vmap.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.russia.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.world.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.europe.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.germany.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.usa.js" type="text/javascript"></script>
+    <script src="/assets/jquery.vmap.sampledata.js" type="text/javascript"></script>
+    <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+    <script src="/assets/morris.min.js" type="text/javascript"></script>
+    <script src="/assets/raphael-min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.sparkline.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="./assets/bootstrap-tabdrop.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/assets/metronic.js" type="text/javascript"></script>
+    <script src="/assets/layout.js" type="text/javascript"></script>
+    <script src="/assets/demo.js" type="text/javascript"></script>
+    <script src="/assets/login.js" type="text/javascript"></script>
+    <script src="/assets/portlet-draggable.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+    jQuery(document).ready(function() {     
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Login.init();
+        Demo.init();
+        PortletDraggable.init();
+    });
+    </script>
+    <!-- END JAVASCRIPTS -->
 <script type="text/javascript" charset="utf-8" src="/assets/app.js"></script>
 </body>
 </html>

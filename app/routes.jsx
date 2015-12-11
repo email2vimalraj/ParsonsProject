@@ -30,18 +30,18 @@ export default (
   <Route component={App}>
     <Route path="/" component={Login} />
     <Route path="/register" component={Signup} />
-    <Route path="/dashboard" component={Dashboard} onEnter={requireAuth} >
-      <Route path="/about" component={About} onEnter={requireAuth}/>
-      <Route path="/main" component={DashboardDisplay} onEnter={requireAuth}/>
-      <Route path="/profile" component={Profile} onEnter={requireAuth}/>    
-      <Route path="/assignments" component={Assignments} onEnter={requireAuth}/>
-      <Route path="/randomproblem" component={RandomProblem} onEnter={requireAuth}/>
+    <Route path="/dashboard" component={Dashboard} >
+      <Route path="/about" component={About}/>
+      <Route path="/main" component={DashboardDisplay}/>
+      <Route path="/profile" component={Profile}/>    
+      <Route path="/assignments" component={Assignments}/>
+      <Route path="/randomproblem" component={RandomProblem}/>
       <Route path="/randomproblem/:id" component={RProblem}/> 
-      <Route path="/statistics" component={Statistics} onEnter={requireAuth}/> 
-      <Route path="/inbox" component={Inbox} onEnter={requireAuth}/>
-      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
-      <Route path="/chat" component={Chat} onEnter={requireAuth}/>   
-      <Route path="/createproblem" component={CreateProblem} onEnter={requireAuth}/>       
+      <Route path="/statistics" component={Statistics}/> 
+      <Route path="/inbox" component={Inbox}/>
+      <Route path="/settings" component={Settings}/>
+      <Route path="/chat" component={Chat}/>   
+      <Route path="/createproblem" component={CreateProblem}/>       
       <Route path="*" component={NotFound}/>
   </Route>
   </Route>
